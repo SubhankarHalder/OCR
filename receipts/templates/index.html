@@ -1,0 +1,9 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>OCR Accuracy Home</h1>
+  <p>Welcome to OCR Accuracy, a website developed by <em>Subhankar Halder</em>!</p>
+  <h2>Accuracy Calculation</h2>
+  <li>Accuracy Percentage: {{ check_accuracy.accuracy }}</li>
+  <li>Number of Images Processed: {{ check_accuracy.number_images }}</li>
+  {% endblock %}

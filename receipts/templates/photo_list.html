@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Receipt List</h1>
+  <h2>Receipt Name/Actual Date/Extracted Date</h2>
+  {% if photo_list %}
+  <ul>  {% for photo in photo_list %}
+      <li>
+          {{ photo.title }} ({{photo.actual_date}})({{photo.extracted_date}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no images in the database.</p>
+  {% endif %}       
+{% endblock %}
