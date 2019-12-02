@@ -60,7 +60,7 @@ Once uploaded, the images were stored in their original JPEG format. When a user
 * FrontEnd: On the FrontEnd the user can view the calculated accuracy of the OCR exercise
 * Detailed Views: The user can also view a second page highlighting the list of receipt file names, their actual and their extracted dates. A screenshot of the detailed view is shown below:
 
-[![Detail View][detail-view]]
+![Detail View][detail-view]
 
 ### Built With
 
