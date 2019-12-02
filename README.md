@@ -13,7 +13,7 @@
     <a href="https://github.com/SubhankarHalder/OCR/tree/master/receipts"><strong>Explore the Project Application  »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/SubhankarHalder/OCR/tree/master/receipts/media">View Sample Receipts</a>
+    <a href="https://github.com/SubhankarHalder/OCR/tree/master/receipts/media/images">View Sample Receipts</a>
     ·
     <a href="https://github.com/SubhankarHalder/OCR/issues">Report Bug</a>
     ·
