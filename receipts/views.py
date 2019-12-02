@@ -15,7 +15,7 @@ from django.views import generic
 
 def get_URL():
     """URL with API Key"""
-    URL =  'https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBa3Lj6BoBxBwOlP4KznY0ZVF4Wx9g-f5A'
+    URL =  'https://vision.googleapis.com/v1/images:annotate?key='
     return URL 
 
 def encode_image(image_path):
@@ -43,11 +43,11 @@ def image_request(image_path):
     r = requests.post(get_URL(), json = data)
     return r.text
 
-#def media_path():
-#    """Returns the Root Media path but with the word "Media" removed"""
-#    path = settings.MEDIA_ROOT
-#    new_path = path [:-6]
-#    return new_path
+def media_path():
+    """Returns the Root Media path but with the word "Media" removed"""
+    path = settings.MEDIA_ROOT
+    new_path = path [:-6]
+    return new_path
 
 def regex(expression):
     """Attempts to extract date from data"""
@@ -147,7 +147,7 @@ def index(request):
     # Calls function to receive the OCR data for the receipt images
     photos = Photo.objects.all()
     for receipts in photos:
-        receipts.extracted_date = api_loop(receipts.picture.url.split('?')[0])
+        receipts.extracted_date = api_loop(media_path()+receipts.picture.url)
         receipts.save()
 
     # Compare Actual and Extracted Date
