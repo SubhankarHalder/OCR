@@ -39,15 +39,15 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]
+![Product Name Screen Shot][product-screenshot]
 
 The objective of the project is to develop a RESTful service that extracts the receipt date from a set of receipts. The receipt date is also known as the expense date. A sample receipt is shown below:
 
-[![Receipt Photo][receipt-photo]]
+![Receipt Photo][receipt-photo]
 
 The receipts are uploaded by the admin along with the actual date listed in the receipt. Since certain receipts could have no expense date, the service's database is allowed to record null dates. A screenshot of the admin view is shown below:
 
-[![Admin View][admin-view]]
+![Admin View][admin-view]
 
 Once uploaded, the images were stored in their original JPEG format. When a user loads the website's index page in their browser, the following actions take place:
 
@@ -115,6 +115,6 @@ Special thanks to [Fyle](https://www.fylehq.com) for the receipt samples and the
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [product-screenshot]: presentation/Pic3.png
-[receipt-photo]: media/0a0ebd53.jpeg
+[receipt-photo]: media/images/0a0ebd53.jpeg
 [admin-view]: presentation/Pic1.png
 [detail-view]: presentation/Pic2.png
