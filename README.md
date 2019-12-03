@@ -5,7 +5,7 @@
     <img src="presentation/Pic3.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">A RESTful Service to extract dates from receipts</h3>
+  <h3 align="center">A RESTful Service to view extracted dates from receipts</h3>
   <h4 align="center">Subhankar Halder</h4>
   <p align="center">
     A Django project that uses Google Cloud Vision API to do Optical Character Reading and measures the service's accuracy
@@ -27,6 +27,7 @@
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
 * [OCR Engine](#OCR-engine)
+* [RESTful View](#RESTful-view)
 * [Design Explanation](#design-explanation)
   * [Models Layer](#models-layer)
   * [Views Layer](#views-layer)
@@ -57,6 +58,7 @@ Once uploaded, the images were stored in their original JPEG format. When a user
 * Process and pass through REGEX: The JSON is processed to a string and passed through several regular expressions to extract possible date values
 * DateUtil: The values are passed through the parse module of DateUtil to return a date
 * Extracted Date: This date is posted as the "Extracted Date" of the receipts on the database
+* API Endpoint: A client can query the server to get a list of the extracted dates for the receipts
 * FrontEnd: On the FrontEnd the user can view the calculated accuracy of the OCR exercise
 * Detailed Views: The user can also view a second page highlighting the list of receipt file names, their actual and their extracted dates. A screenshot of the detailed view is shown below:
 
@@ -75,6 +77,13 @@ Once uploaded, the images were stored in their original JPEG format. When a user
 
 One of the most difficult choices to make during this project was to decide on the OCR engine. I narrowed down to Tesseract and Google Vision API. With Tesseract, I would have to do a lot of preprocessing with the images. On the other hand, with Google Vision API, all I required was the API key. Further, I read about how Google Vision AI does not do a lot of preprocessing of the images but relies on its neural net to "implicitly" figure out the contrasting elements in the document. 
 
+<!-- RESTful View -->
+## RESTful VIEW
+
+This application also involves a RESTful service that allows clients to view the data as a JSON response. The GET response should be sent to "http://127.0.0.1:8000/receipts/api"
+
+A screenshot of a sample CURL command is shown below:
+![Curl Screen Shot][curl-screenshot]
 
 <!-- Design Explanation -->
 ##  Design Explanation
@@ -90,7 +99,7 @@ The Models module of Django comprises just one class called Photo which stores t
 
 ### Views Layer
 
-The Views module forms the crux of the project with sending POST requests to the Vision API, processing and passing information through REGEX and calculating the service's accuracy.
+The Views module forms the crux of the project with sending POST requests to the Vision API, processing and passing information through REGEX and calculating the service's accuracy. The views layer also deals with the GET request from a client. 
 
 ### Templates Layer
 
@@ -118,3 +127,4 @@ Special thanks to [Fyle](https://www.fylehq.com) for the receipt samples and the
 [receipt-photo]: media/images/0a0ebd53.jpeg
 [admin-view]: presentation/Pic1.png
 [detail-view]: presentation/Pic2.png
+[curl-screenshot]: presentation/Picapi.png

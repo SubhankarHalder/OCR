@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.views import View
+from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
 from .models import Photo
 import base64
 import requests
@@ -15,7 +18,7 @@ from django.views import generic
 
 def get_URL():
     """URL with API Key"""
-    URL =  'https://vision.googleapis.com/v1/images:annotate?key='
+    URL =  'https://vision.googleapis.com/v1/images:annotate?key=
     return URL 
 
 def encode_image(image_path):
@@ -171,5 +174,12 @@ def index(request):
     return render(request, 'index.html', context)
 
 class PhotoListView(generic.ListView):
-    """View function for each Receipt"""
+    """View function for Receipt List"""
     model = Photo
+
+class PhotoRest(View):
+    """The view for the API"""
+    def get(self, request):
+        # Function for GET response
+        photo_list = list(Photo.objects.values())
+        return JsonResponse(photo_list, safe=False)
