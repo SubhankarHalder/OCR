@@ -52,15 +52,15 @@ The receipts are uploaded by the admin along with the actual date listed in the 
 
 Once uploaded, the images were stored in their original JPEG format. When a user loads the website's index page in their browser, the following actions take place:
 
-* BASE64 Serialization: The images are converted to their Base64 counterparts.
-* VISION API POST Request: A POST request is sent to the VISION API with the image as the argument in its Base64 format
-* Receive JSON Response: The VISION API sends a JSON response containing the OCR details
-* Process and pass through REGEX: The JSON is processed to a string and passed through several regular expressions to extract possible date values
-* DateUtil: The values are passed through the parse module of DateUtil to return a date
-* Extracted Date: This date is posted as the "Extracted Date" of the receipts on the database
-* API Endpoint: A client can query the server to get a list of the extracted dates for the receipts
-* FrontEnd: On the FrontEnd the user can view the calculated accuracy of the OCR exercise
-* Detailed Views: The user can also view a second page highlighting the list of receipt file names, their actual and their extracted dates. A screenshot of the detailed view is shown below:
+* **BASE64 Serialization:** The images are converted to their Base64 counterparts.
+* **VISION API POST Request:** A POST request is sent to the VISION API with the image as the argument in its Base64 format
+* **Receive JSON Response:** The VISION API sends a JSON response containing the OCR details
+* **Process and pass through REGEX:** The JSON is processed to a string and passed through several regular expressions to extract possible date values
+* **DateUtil:** The values are passed through the parse module of DateUtil to return a date
+* **Extracted Date:** This date is posted as the "Extracted Date" of the receipts on the database
+* **API Endpoint:** A client can query the server to get a list of the extracted dates for the receipts
+* **FrontEnd:** On the FrontEnd the user can view the calculated accuracy of the OCR exercise
+* **Detailed Views:** The user can also view a second page highlighting the list of receipt file names, their actual and their extracted dates. A screenshot of the detailed view is shown below:
 
 ![Detail View][detail-view]
 
